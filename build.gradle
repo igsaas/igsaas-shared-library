@@ -42,6 +42,7 @@ publishing {
 		maven {
 			name = "GitHubPackages"
 			url = uri("https://maven.pkg.github.com/igsaas/igsaas-shared-library")
+
 			credentials {
 				username = System.getenv("GITHUB_ACTOR") ?: project.findProperty("user")
 				password = System.getenv("GITHUB_TOKEN") ?: project.findProperty("token")
