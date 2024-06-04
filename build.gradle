@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'igsaas'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 
 java {
 	sourceCompatibility = '17'
@@ -52,6 +52,14 @@ publishing {
 	publications {
 		gpr(MavenPublication) {
 			from(components.java)
+			versionMapping {
+				usage('java-api') {
+					fromResolutionOf('runtimeClasspath')
+				}
+				usage('java-runtime') {
+					fromResolutionResult()
+				}
+			}
 		}
 	}
 }
