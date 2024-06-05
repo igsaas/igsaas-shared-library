@@ -32,6 +32,11 @@ repositories {
 	mavenCentral()
 }
 
+task buildJar(type: Jar) {
+	archiveBaseName = 'igsaas-shared-library'
+	from sourceSets.main.output
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -63,6 +68,7 @@ publishing {
 		gpr(MavenPublication) {
 			groupId = "igsaas"
 			artifactId = "igsaas-shared-library"
+			artifact buildJar
 			version = "0.0.1-SNAPSHOT"
 			from(components.java)
 			versionMapping {
