@@ -10,8 +10,6 @@ version = '0.0.1-SNAPSHOT'
 
 java {
 	sourceCompatibility = '17'
-	withJavadocJar()
-	withSourcesJar()
 }
 
 configurations {
@@ -20,21 +18,8 @@ configurations {
 	}
 }
 
-bootJar {
-	enabled = false
-}
-
-jar {
-	enabled = true
-}
-
 repositories {
 	mavenCentral()
-}
-
-task buildJar(type: Jar) {
-	archiveBaseName = 'igsaas-shared-library'
-	from sourceSets.main.output
 }
 
 dependencies {
