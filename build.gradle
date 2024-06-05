@@ -22,10 +22,6 @@ repositories {
 	mavenCentral()
 }
 
-task buildJar(type: Jar) {
-	archiveBaseName = 'igsaas-shared-library'
-	from sourceSets.main.output
-}
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
@@ -40,6 +36,11 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+task buildJar(type: Jar) {
+	archiveBaseName = 'igsaas-shared-library'
+	from sourceSets.main.output
 }
 
 publishing {

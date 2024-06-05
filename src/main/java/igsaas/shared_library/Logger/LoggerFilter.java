@@ -62,7 +62,7 @@ public class LoggerFilter extends OncePerRequestFilter {
 
 
         // Log the request method, URI, filtered request payload, response status code, and time taken
-        log.info("FINISHED PROCESSING: IP={}; METHOD={}; REQUESTURI={}; REQUEST PAYLOAD={}; CODE={}; TIME TAKEN={}",
+        log.info("Finish Processing: IP={}; Method={}; RequestURI={}; Request Payload={}; HttpStatus={}; Time Taken={}",
                 request.getRemoteHost(), request.getMethod(), request.getRequestURI(), requestBody, response.getStatus(), timeTaken);
 
         System.out.println(responseBody);
