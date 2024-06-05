@@ -62,7 +62,7 @@ publishing {
 	publications {
 		gpr(MavenPublication) {
 			groupId = "igsaas"
-			artifactId = "shared-library"
+			artifactId = "igsaas-shared-library"
 			version = "0.0.1-SNAPSHOT"
 			from(components.java)
 			versionMapping {
